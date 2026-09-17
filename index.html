@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fbf7f0" />
+  <title>Desi Zaika | Daily Tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="brand-mark" aria-hidden="true">✦</div>
+      <div>
+        <p class="eyebrow">Desi Zaika · personal planner</p>
+        <h1 id="page-title">Make room for<br /><em>what matters.</em></h1>
+        <p class="intro">A calm place to capture today's tasks and keep your momentum.</p>
+      </div>
+      <div class="date-card">
+        <span id="day-name">Monday</span>
+        <strong id="date-label">Jan 1, 2024</strong>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="Task manager">
+      <div class="stats-row" aria-label="Task statistics">
+        <div class="stat"><span id="total-count">0</span><small>Total tasks</small></div>
+        <div class="stat"><span id="active-count">0</span><small>To do</small></div>
+        <div class="stat"><span id="done-count">0</span><small>Completed</small></div>
+        <div class="progress-stat"><div class="progress-label"><small>Daily progress</small><strong id="progress-value">0%</strong></div><div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div></div>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">New task</label>
+        <input id="task-input" type="text" maxlength="120" placeholder="What needs to be done?" autocomplete="off" required />
+        <button class="add-button" type="submit"><span>+</span> Add task</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="tablist" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all" role="tab" aria-selected="true">All <b id="all-filter-count">0</b></button>
+          <button class="filter" data-filter="active" role="tab" aria-selected="false">To do</button>
+          <button class="filter" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+        </div>
+        <button id="clear-completed" class="text-button" type="button">Clear completed</button>
+      </div>
+
+      <div id="task-list" class="task-list" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state"><div class="empty-icon">☀</div><h2 id="empty-title">Your list is clear</h2><p id="empty-message">Add a task above and turn plans into progress.</p></div>
+    </section>
+    <footer><span class="status-dot"></span> Saved automatically in your browser</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
